@@ -808,3 +808,8 @@ ul { list-style: none; }
 .site-header .logo img { height: 64px; }
 @media (max-width: 720px) { .site-header .logo img { height: 52px; } }
 @media (max-width: 360px) { .site-header .logo img { height: 46px; } }
+
+/* "Every major card network": single full-width image */
+.cards-accepted { max-width: 1100px; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); background: var(--white); }
+.cards-accepted img { width: 100%; height: auto; display: block; }
+@media (max-width: 520px) { .cards-accepted { border-radius: 12px; } }
