@@ -12,7 +12,7 @@
 
   var SERVICES = [
     'AEPS', 'Money Transfer', 'Bills & Recharges (BBPS)', 'Spot Cash / Card Swipe',
-    'Payment Gateway', 'CMS - Cash Management', 'E-Seva Services', 'A4 Sheets',
+    'Payment Gateway', 'CMS - Cash Management', 'E-Seva Services', 'A4 Papers',
     'Become a Retailer / Partner', 'Other'
   ];
 
@@ -20,7 +20,7 @@
   var PAGE_SERVICE = {
     'aeps.html': 'AEPS', 'bbps.html': 'Bills & Recharges (BBPS)',
     'payment-gateway.html': 'Spot Cash / Card Swipe', 'cms.html': 'CMS - Cash Management',
-    'e-seva.html': 'E-Seva Services', 'a4-sheets.html': 'A4 Sheets'
+    'e-seva.html': 'E-Seva Services', 'a4-sheets.html': 'A4 Papers'
   };
 
   var ICON_CLOSE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>';

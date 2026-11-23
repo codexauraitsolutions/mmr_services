@@ -98,14 +98,14 @@
       id: 'order', label: 'Place an A4 order',
       keywords: ['how to order', 'how do i order', 'want to order', 'place order', 'place an order', 'order a4', 'order paper', 'order', 'buy', 'purchase', 'delivery', 'deliver', 'bulk', 'quantity'],
       answer: 'To place an order, tell us the <b>GSM</b> (70 / 75 / 80) and the <b>number of reams</b> on ' + callLink + ' We deliver to your doorstep.',
-      wa: 'Hi MMR SERVICES, I want to order A4 sheets. GSM: ___  Reams: ___',
+      wa: 'Hi MMR SERVICES, I want to order A4 papers. GSM: ___  Reams: ___',
       next: ['a4', 'contact']
     },
     {
-      id: 'a4', label: 'A4 Sheets',
+      id: 'a4', label: 'A4 Papers',
       keywords: ['a4', 'paper', 'sheet', 'sheets', 'ream', 'gsm', 'copier', 'xerox', 'printing paper', 'bundle', 'stationery'],
-      answer: '<b>A4 Sheets</b><ul><li>70 GSM: everyday printing &amp; photocopies</li><li>75 GSM: office documents</li><li>80 GSM: premium professional prints</li></ul>500 sheets per ream, special pricing for bulk orders, and doorstep delivery.<br>For prices and orders: ' + callLink,
-      link: ['a4-sheets.html', 'View A4 Sheets page'],
+      answer: '<b>A4 Papers</b><ul><li>70 GSM: everyday printing &amp; photocopies</li><li>75 GSM: office documents</li><li>80 GSM: premium professional prints</li></ul>500 sheets per ream, special pricing for bulk orders, and doorstep delivery.<br>For prices and orders: ' + callLink,
+      link: ['a4-sheets.html', 'View A4 Papers page'],
       next: ['order', 'contact']
     },
     {
@@ -190,7 +190,7 @@
     launcher.setAttribute('aria-label', 'Open chat assistant');
     launcher.setAttribute('aria-expanded', 'false');
 
-    var nudge = el('div', 'chat-nudge', 'Hi! &#128075; Need help with AEPS, bills, spot cash or A4 sheets?');
+    var nudge = el('div', 'chat-nudge', 'Hi! &#128075; Need help with AEPS, bills, spot cash or A4 papers?');
 
     var panel = el('section', 'chat-panel');
     panel.setAttribute('role', 'dialog');
