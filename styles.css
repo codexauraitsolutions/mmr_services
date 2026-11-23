@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Dancing+Script:wght@600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
 /* Brand colours taken from the MMR Services visiting card */
 :root {
@@ -560,8 +560,6 @@ ul { list-style: none; }
     font: 600 0.9rem 'Poppins', sans-serif;
   }
   .float-btns svg { width: 22px; height: 22px; }
-  .float-wa::after { content: "WhatsApp"; }
-  .float-call::after { content: "Call"; }
   .chat-launcher {
     right: 0; bottom: 0; width: 33.34%; height: 56px; padding: 0 8px;
     border-radius: 0; box-shadow: 0 -6px 18px rgba(10,37,71,0.12); justify-content: center; gap: 6px;
@@ -723,54 +721,31 @@ ul { list-style: none; }
   .site-header.header-hidden { transform: none; }
 }
 
-/* ---------- Brand logo: emblem image + sharp text (readable tagline at every size) ---------- */
-.brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
-.brand .brand-mark { height: 56px; width: 56px; flex-shrink: 0; }
-.brand-text { display: flex; flex-direction: column; line-height: 1; }
-.brand-name { font-family: 'Cinzel', Georgia, serif; font-weight: 800; font-size: 27px; color: #f36f20; letter-spacing: 1px; line-height: 0.95; }
-.brand-sub { font-family: 'Cinzel', Georgia, serif; font-weight: 700; font-size: 15px; color: #f36f20; letter-spacing: 2.4px; line-height: 1.15; }
-.brand-tag { font-family: 'Dancing Script', cursive; font-weight: 700; font-size: 16.5px; color: #0a2547; line-height: 1.1; white-space: nowrap; margin-top: 1px; }
+/* ---------- Same number for call + WhatsApp: [call icon][WhatsApp icon] number ---------- */
+.tb-dual, .footer-dual, .inline-dual, .chat-dual { display: inline-flex; align-items: center; gap: 6px; vertical-align: middle; }
+.tb-dual a, .footer-dual a, .inline-dual a, .chat-dual a { display: inline-flex; align-items: center; }
+.tb-dual .dual-call svg { width: 15px; height: 15px; color: var(--orange-2); }
+.tb-dual .dual-wa svg { width: 17px; height: 17px; }
+.tb-dual .dual-num { margin-left: 2px; }
+.footer-dual .dual-call svg { width: 18px; height: 18px; color: var(--orange-2); }
+.footer-dual .dual-wa svg { width: 20px; height: 20px; }
+.footer-dual .dual-num { margin-left: 4px; }
+.inline-dual { gap: 5px; white-space: nowrap; }
+.inline-dual .dual-call svg { width: 16px; height: 16px; color: var(--orange); }
+.inline-dual .dual-wa svg { width: 18px; height: 18px; }
+.inline-dual .dual-num { font-weight: 600; color: var(--blue-deep); margin-left: 2px; }
+.chat-dual { gap: 5px; white-space: nowrap; }
+.msg .chat-dual a { text-decoration: none; }
+.chat-dual .dual-call svg { width: 15px; height: 15px; color: var(--orange); }
+.chat-dual .dual-wa svg { width: 17px; height: 17px; }
+.dual-call:hover svg, .dual-wa:hover svg { transform: scale(1.12); }
 
-.footer-logo.brand { display: inline-flex; padding: 10px 18px 10px 12px; }
-.footer-logo .brand-mark { height: 54px; width: 54px; }
-
-.chat-logo.brand { gap: 6px; padding: 4px 10px 4px 5px; }
-.chat-logo .brand-mark { height: 34px; width: 34px; }
-.chat-logo .brand-name { font-size: 15px; }
-.chat-logo .brand-sub { font-size: 8.5px; letter-spacing: 1.4px; }
-.chat-logo .brand-tag { font-size: 10.5px; }
-
-.quote-brand.brand { justify-content: center; margin: 0 auto 10px; display: flex; }
-.quote-brand .brand-mark { height: 56px; width: 56px; }
-
-@media (max-width: 720px) {
-  .brand .brand-mark { height: 46px; width: 46px; }
-  .brand-name { font-size: 22px; }
-  .brand-sub { font-size: 12.5px; letter-spacing: 2px; }
-  .brand-tag { font-size: 14.5px; }
-  .chat-logo .brand-mark { height: 34px; width: 34px; }
-  .chat-logo .brand-name { font-size: 15px; }
-  .chat-logo .brand-sub { font-size: 8.5px; }
-  .chat-logo .brand-tag { font-size: 10.5px; }
-}
-@media (max-width: 360px) {
-  .brand .brand-mark { height: 40px; width: 40px; }
-  .brand { gap: 8px; }
-  .brand-name { font-size: 19px; }
-  .brand-sub { font-size: 11px; }
-  .brand-tag { font-size: 13px; }
-}
-
-/* keep logo colours inside the chat header (overrides the generic .chat-head span/div rules) */
-.chat-head .chat-logo .brand-text { flex: none; display: flex; flex-direction: column; gap: 0; line-height: 1; }
-.chat-head .chat-logo .brand-name { display: block; color: #f36f20; font-size: 15px; }
-.chat-head .chat-logo .brand-sub { display: block; color: #f36f20; font-size: 8.5px; letter-spacing: 1.4px; }
-.chat-head .chat-logo .brand-tag { display: block; color: #0a2547; font-size: 10.5px; }
-
-/* popup logo: emblem and text sit together, centred (overrides the old .quote-head img rule) */
-.quote-head .quote-brand { width: max-content; max-width: 100%; margin: 0 auto 10px; }
-.quote-head .quote-brand .brand-mark { margin: 0; height: 56px; width: 56px; }
-.quote-head .quote-brand .brand-text { text-align: left; }
+/* hero: same pill as the contact section, on the blue banner */
+.hero .hero-contact { background: rgba(255,255,255,0.1); border: 1.5px solid rgba(255,255,255,0.35); }
 @media (max-width: 520px) {
-  .quote-head .quote-brand .brand-mark { height: 46px; width: 46px; }
+  .hero .btn-row .hero-contact { flex: 1 1 100%; justify-content: center; }
+}
+/* phone bottom bar: icons only for WhatsApp and Call */
+@media (max-width: 720px) {
+  .float-btns a svg { width: 26px; height: 26px; }
 }

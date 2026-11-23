@@ -43,7 +43,7 @@
       '<div class="quote-modal" role="dialog" aria-modal="true" aria-labelledby="quote-title">' +
         '<button type="button" class="quote-close" aria-label="Close">' + ICON_CLOSE + '</button>' +
         '<div class="quote-head">' +
-          '<div class="quote-brand brand"><img src="images/logo-mark.png" alt="" width="375" height="375" class="brand-mark"><span class="brand-text"><span class="brand-name">MMR</span><span class="brand-sub">SERVICES</span><span class="brand-tag">We will on time service</span></span></div>' +
+          '<img src="images/logo.png" alt="MMR SERVICES" width="1065" height="475">' +
           '<h2 id="quote-title">Get a Free Quote</h2>' +
           '<p>Tell us what you need and our team will get back to you quickly.</p>' +
         '</div>' +
@@ -55,7 +55,7 @@
           '<label class="quote-full">Message<textarea name="message" rows="3" maxlength="400" placeholder="Optional: quantity, requirement, best time to call…"></textarea></label>' +
           '<p class="quote-error" role="alert" hidden></p>' +
           '<button type="submit" class="btn btn-wa quote-submit">' + ICON_WA + ' Send on WhatsApp</button>' +
-          '<a class="quote-call" href="tel:' + CALL_TEL + '">' + ICON_PHONE + ' Or call ' + CALL_LABEL + '</a>' +
+          '<a class="quote-call" href="tel:' + CALL_TEL + '">' + ICON_PHONE + ' ' + CALL_LABEL + '</a>' +
         '</form>' +
       '</div>';
     document.body.appendChild(wrap);

@@ -15,7 +15,9 @@
   function waLink(text) {
     return 'https://wa.me/' + WA.number + (text ? '?text=' + encodeURIComponent(text) : '');
   }
-  var callLink = '<a href="tel:' + CALL.tel + '">' + CALL.label + '</a>';
+  var callLink = '<span class="chat-dual"><a href="tel:' + CALL.tel + '" class="dual-call" aria-label="Call ' + CALL.label + '"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></a>'
+    + '<a href="' + waLink('Hi MMR SERVICES, I need some help.') + '" class="dual-wa" target="_blank" rel="noopener" aria-label="WhatsApp ' + CALL.label + '"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#25D366" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/><path fill="#fff" d="M8.6 7.2c-.2 0-.5.1-.7.3-.3.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.8 2.2.9 2.6.7 3.1.6.5 0 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3l-1.6-.8c-.2-.1-.4-.1-.6.1l-.7.9c-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2-1.3-.8-.7-1.3-1.5-1.4-1.8-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.2-.5.1-.2 0-.3 0-.5l-.8-1.8c-.2-.4-.4-.4-.5-.4z"/></svg></a>'
+    + '<a href="tel:' + CALL.tel + '" class="dual-num">' + CALL.label + '</a></span>';
   var waAnchor = '<a href="' + waLink('Hi MMR SERVICES, I need some help.') + '" target="_blank" rel="noopener">' + WA.label + '</a>';
 
   // ------------------------------------------------------------ knowledge base
@@ -31,7 +33,7 @@
     {
       id: 'money', label: 'Money Transfer',
       keywords: ['money transfer', 'transfer', 'send money', 'receive money', 'dmt', 'remittance', 'remit'],
-      answer: '<b>Money Transfer</b><br>Send money and receive money, anytime, anywhere. Visit either of our offices, or call ' + callLink + ' to get started.',
+      answer: '<b>Money Transfer</b><br>Send money and receive money, anytime, anywhere. Visit either of our offices or reach us on ' + callLink + '.',
       link: ['aeps.html', 'View details'],
       next: ['aeps', 'upi', 'contact']
     },
@@ -52,14 +54,14 @@
     {
       id: 'travel', label: 'Bus & Flight Booking',
       keywords: ['bus', 'flight', 'ticket', 'tickets', 'travel', 'booking', 'book', 'air ticket'],
-      answer: '<b>Bus &amp; Flight Booking</b><br>Book your bus tickets and flight tickets easily with us. For dates and fares, call or WhatsApp ' + callLink + '.',
+      answer: '<b>Bus &amp; Flight Booking</b><br>Book your bus tickets and flight tickets easily with us. For dates and fares: ' + callLink,
       link: ['bbps.html', 'View details'],
       next: ['bbps', 'contact']
     },
     {
       id: 'rates', label: 'Spot Cash & Card Swipe',
       keywords: ['rate', 'rates', 'charge', 'charges', 'percent', '%', 'commission', 'fee', 'fees', 'price', 'cost', 'spot cash', 'swipe', 'swiping', 'credit card', 'card swipe', 'pos', 'machine', 'payment gateway', 'gateway', 'pg', 'spot', 'minimal'],
-      answer: '<b>Spot Cash &amp; Card Swipe</b><br>Swipe your credit card and get spot cash with minimal charges.<ul><li>Credit card swiping retailer ID</li><li>QR code (UPI) payments</li><li>OTP-based POS machine</li></ul>All cards supported (Visa, Mastercard, RuPay, American Express, Diners Club) with instant settlement.<br>For the latest charges, call or WhatsApp ' + callLink + '.',
+      answer: '<b>Spot Cash &amp; Card Swipe</b><br>Swipe your credit card and get spot cash with minimal charges.<ul><li>Credit card swiping retailer ID</li><li>QR code (UPI) payments</li><li>OTP-based POS machine</li></ul>All cards supported (Visa, Mastercard, RuPay, American Express, Diners Club) with instant settlement.<br>For the latest charges: ' + callLink,
       link: ['payment-gateway.html', 'View Payment Gateway page'],
       next: ['cards', 'retailer', 'contact']
     },
@@ -80,7 +82,7 @@
     {
       id: 'cms', label: 'CMS (Cash Management)',
       keywords: ['cms', 'cash management', 'cash management services', 'collection', 'collections', 'receivable', 'receivables', 'payable', 'payables', 'vendor payment', 'salary', 'salaries', 'liquidity', 'cash flow', 'cash pickup', 'treasury', 'nach', 'mis', 'reconciliation'],
-      answer: '<b>CMS: Cash Management Services</b><br>Simplify how your business collects, pays and tracks money:<ul><li>Collections from customers and branches</li><li>Vendor, salary and bill payments</li><li>Better cash flow and liquidity planning</li><li>Clear MIS reports and reconciliation</li></ul>Suitable for growing businesses, distributors and multi-branch firms. Call or WhatsApp ' + callLink + ' to discuss your needs.',
+      answer: '<b>CMS: Cash Management Services</b><br>Simplify how your business collects, pays and tracks money:<ul><li>Collections from customers and branches</li><li>Vendor, salary and bill payments</li><li>Better cash flow and liquidity planning</li><li>Clear MIS reports and reconciliation</li></ul>Suitable for growing businesses, distributors and multi-branch firms. To discuss your needs: ' + callLink,
       link: ['cms.html', 'View CMS page'],
       wa: 'Hi MMR SERVICES, I want to know about Cash Management Services (CMS).',
       next: ['retailer', 'contact']
@@ -95,21 +97,21 @@
     {
       id: 'order', label: 'Place an A4 order',
       keywords: ['how to order', 'how do i order', 'want to order', 'place order', 'place an order', 'order a4', 'order paper', 'order', 'buy', 'purchase', 'delivery', 'deliver', 'bulk', 'quantity'],
-      answer: 'To place an order, tell us the <b>GSM</b> (70 / 75 / 80) and the <b>number of reams</b> by call or WhatsApp on ' + callLink + '. We deliver to your doorstep.',
+      answer: 'To place an order, tell us the <b>GSM</b> (70 / 75 / 80) and the <b>number of reams</b> on ' + callLink + ' We deliver to your doorstep.',
       wa: 'Hi MMR SERVICES, I want to order A4 sheets. GSM: ___  Reams: ___',
       next: ['a4', 'contact']
     },
     {
       id: 'a4', label: 'A4 Sheets',
       keywords: ['a4', 'paper', 'sheet', 'sheets', 'ream', 'gsm', 'copier', 'xerox', 'printing paper', 'bundle', 'stationery'],
-      answer: '<b>A4 Sheets</b><ul><li>70 GSM: everyday printing &amp; photocopies</li><li>75 GSM: office documents</li><li>80 GSM: premium professional prints</li></ul>500 sheets per ream, special pricing for bulk orders, and doorstep delivery.<br>For prices and orders, call or WhatsApp ' + callLink + '.',
+      answer: '<b>A4 Sheets</b><ul><li>70 GSM: everyday printing &amp; photocopies</li><li>75 GSM: office documents</li><li>80 GSM: premium professional prints</li></ul>500 sheets per ream, special pricing for bulk orders, and doorstep delivery.<br>For prices and orders: ' + callLink,
       link: ['a4-sheets.html', 'View A4 Sheets page'],
       next: ['order', 'contact']
     },
     {
       id: 'retailer', label: 'Become a Retailer',
       keywords: ['retailer', 'distributor', 'partner', 'join', 'franchise', 'agent', 'register', 'registration', 'id', 'onboard', 'business', 'start'],
-      answer: '<b>Become a retailer / partner</b><br>Offer AEPS, money transfer, bill payments, recharges, card swipe and E-Seva services from your shop and earn on every transaction. Credit card swiping retailer IDs are also available.<br>Call or WhatsApp ' + callLink + ' to get started.',
+      answer: '<b>Become a retailer / partner</b><br>Offer AEPS, money transfer, bill payments, recharges, card swipe and E-Seva services from your shop and earn on every transaction. Credit card swiping retailer IDs are also available.<br>To get started: ' + callLink,
       wa: 'Hi MMR SERVICES, I want to become a retailer / partner.',
       next: ['login', 'rates', 'contact']
     },
@@ -122,14 +124,14 @@
     {
       id: 'offices', label: 'Office Address',
       keywords: ['address', 'office', 'location', 'where', 'branch', 'visit', 'chennai', 'sithalapakkam', 'srikalahasti', 'kalahasti', 'andhra', 'tamil nadu', 'map', 'directions'],
-      answer: '<b>Chennai office</b><br>#3/740, Kanni Kovil Street, Sithalapakkam, Chennai - 600131.<br>&#128205; <a href="https://maps.app.goo.gl/EPhTznhaiuHwMEHp7" target="_blank" rel="noopener">Open in Google Maps</a><br>Landline: <a href="tel:' + LANDLINE_CHN.tel + '">' + LANDLINE_CHN.label + '</a><br><br><b>Srikalahasti office</b><br>1-284/5, Pichatur Road, Revenue Ward 1 (Behind Sri Draupadi Sametha Dharmaraja Swamy Temple), Srikalahasti, A.P - 517644.<br>&#128205; <a href="https://maps.app.goo.gl/B24z3HJkmfDDjsa46" target="_blank" rel="noopener">Open in Google Maps</a><br>Landline: <a href="tel:' + LANDLINE_SKHT.tel + '">' + LANDLINE_SKHT.label + '</a>',
+      answer: '<b>Chennai office</b><br>#3/740, Kanni Kovil Street, Sithalapakkam, Chennai - 600131.<br>&#128205; <a href="https://maps.app.goo.gl/EPhTznhaiuHwMEHp7" target="_blank" rel="noopener">Open in Google Maps</a><br>&#9742;&#65039; <a href="tel:' + LANDLINE_CHN.tel + '">' + LANDLINE_CHN.label + '</a><br><br><b>Srikalahasti office</b><br>1-284/5, Pichatur Road, Revenue Ward 1 (Behind Sri Draupadi Sametha Dharmaraja Swamy Temple), Srikalahasti, A.P - 517644.<br>&#128205; <a href="https://maps.app.goo.gl/B24z3HJkmfDDjsa46" target="_blank" rel="noopener">Open in Google Maps</a><br>&#9742;&#65039; <a href="tel:' + LANDLINE_SKHT.tel + '">' + LANDLINE_SKHT.label + '</a>',
       link: ['index.html#contact', 'View offices'],
       next: ['contact']
     },
     {
       id: 'contact', label: 'Contact Us',
       keywords: ['contact', 'call', 'phone', 'number', 'mobile', 'whatsapp', 'whats app', 'email', 'mail', 'talk', 'human', 'person', 'agent', 'support', 'help', 'customer care', 'reach'],
-      answer: '<b>Contact MMR SERVICES</b><br>&#128222; Call / WhatsApp: ' + callLink + ' (<a href="' + waLink('Hi MMR SERVICES, I need some help.') + '" target="_blank" rel="noopener">chat on WhatsApp</a>)<br>&#9742;&#65039; Landline: <a href="tel:' + LANDLINE_CHN.tel + '">' + LANDLINE_CHN.label + '</a> (Chennai), <a href="tel:' + LANDLINE_SKHT.tel + '">' + LANDLINE_SKHT.label + '</a> (Srikalahasti)<br>&#9993;&#65039; <a href="mailto:' + MAIL + '">' + MAIL + '</a> / <a href="mailto:' + MAIL2 + '">' + MAIL2 + '</a>',
+      answer: '<b>Contact MMR SERVICES</b><br>' + callLink + '<br>&#9742;&#65039; <a href="tel:' + LANDLINE_CHN.tel + '">' + LANDLINE_CHN.label + '</a> (Chennai), <a href="tel:' + LANDLINE_SKHT.tel + '">' + LANDLINE_SKHT.label + '</a> (Srikalahasti)<br>&#9993;&#65039; <a href="mailto:' + MAIL + '">' + MAIL + '</a> / <a href="mailto:' + MAIL2 + '">' + MAIL2 + '</a>',
       next: ['offices', 'retailer']
     },
     {
@@ -196,12 +198,12 @@
     panel.hidden = true;
     panel.innerHTML =
       '<header class="chat-head">' +
-        '<span class="chat-logo brand"><img src="images/logo-mark.png" alt="" width="375" height="375" class="brand-mark"><span class="brand-text"><span class="brand-name">MMR</span><span class="brand-sub">SERVICES</span><span class="brand-tag">We will on time service</span></span></span>' +
-        '<div><strong>MMR Customer Support</strong><span><i></i>Online &middot; replies instantly</span></div>' +
+        '<span class="chat-logo"><img src="images/logo.png" alt="MMR SERVICES" width="1065" height="475"></span>' +
+        '<div><strong>Customer Support</strong><span><i></i>Online &middot; replies instantly</span></div>' +
         '<button type="button" class="chat-close" aria-label="Close chat">' + ICON_CLOSE + '</button>' +
       '</header>' +
       '<div class="chat-body" aria-live="polite"></div>' +
-      '<div class="chat-handoff"><a href="' + waLink('Hi MMR SERVICES, I need some help.') + '" target="_blank" rel="noopener">' + ICON_WA + ' Chat with a person on WhatsApp</a></div>' +
+      '<div class="chat-handoff"><a href="' + waLink('Hi MMR SERVICES, I need some help.') + '" target="_blank" rel="noopener">' + ICON_WA + ' ' + CALL.label + '</a></div>' +
       '<form class="chat-form" autocomplete="off">' +
         '<input type="text" name="q" placeholder="Type your question…" aria-label="Type your question" maxlength="300">' +
         '<button type="submit" aria-label="Send">' + ICON_SEND + '</button>' +
@@ -264,7 +266,7 @@
         box.appendChild(a);
       }
       if (topic.wa) {
-        var w = el('a', 'msg-btn msg-btn-wa', ICON_WA_WHITE + ' WhatsApp us');
+        var w = el('a', 'msg-btn msg-btn-wa', ICON_WA_WHITE + ' ' + CALL.label);
         w.href = waLink(topic.wa); w.target = '_blank'; w.rel = 'noopener';
         box.appendChild(w);
       }
@@ -279,12 +281,12 @@
         addBot(topic.answer, next, actions(topic));
       } else {
         var box = el('div', 'msg-actions');
-        var w = el('a', 'msg-btn msg-btn-wa', ICON_WA_WHITE + ' Ask on WhatsApp');
+        var w = el('a', 'msg-btn msg-btn-wa', ICON_WA_WHITE + ' ' + CALL.label);
         w.href = waLink('Hi MMR SERVICES, ' + text); w.target = '_blank'; w.rel = 'noopener';
-        var c = el('a', 'msg-btn', '&#128222; Call ' + CALL.label);
+        var c = el('a', 'msg-btn', '&#128222; ' + CALL.label);
         c.href = 'tel:' + CALL.tel;
         box.appendChild(w); box.appendChild(c);
-        addBot('Sorry, I don\'t have an answer for that yet. Our team can help you directly: send your question on WhatsApp or give us a call.', MAIN_MENU, box);
+        addBot('Sorry, I don\'t have an answer for that yet. Our team can help you directly: send your question or reach us on ' + CALL.label + '.', MAIN_MENU, box);
       }
     }
 
