@@ -61,7 +61,7 @@
     {
       id: 'rates', label: 'Spot Cash & Card Swipe',
       keywords: ['rate', 'rates', 'charge', 'charges', 'percent', '%', 'commission', 'fee', 'fees', 'price', 'cost', 'spot cash', 'swipe', 'swiping', 'credit card', 'card swipe', 'pos', 'machine', 'payment gateway', 'gateway', 'pg', 'spot', 'minimal'],
-      answer: '<b>Spot Cash &amp; Card Swipe</b><br>Swipe your credit card and get spot cash with minimal charges.<ul><li>Credit card swiping retailer ID</li><li>QR code (UPI) payments</li><li>OTP-based POS machine</li></ul>All cards supported (Visa, Mastercard, RuPay, American Express, Diners Club) with instant settlement.<br>For the latest charges: ' + callLink,
+      answer: '<b>Spot Cash &amp; Card Swipe</b><br>Swipe your credit card and get spot cash with minimal charges.<ul><li>Credit card swiping retailer ID</li><li>QR code payments</li><li>POS machine: secured PIN based card swiping</li></ul>All cards supported (Visa, Mastercard, RuPay, American Express, Diners Club) with instant settlement.<br>For the latest charges: ' + callLink,
       link: ['payment-gateway.html', 'View Payment Gateway page'],
       next: ['cards', 'retailer', 'contact']
     },
@@ -75,7 +75,7 @@
     {
       id: 'qr', label: 'QR Code',
       keywords: ['qr', 'qr code', 'scan', 'scan and pay', 'scan & pay'],
-      answer: '<b>QR Code (UPI)</b><br>Scan &amp; pay with any UPI app, with instant settlement.',
+      answer: '<b>QR Code</b><br>Scan &amp; pay with any UPI app, with instant settlement.',
       link: ['payment-gateway.html', 'View details'],
       next: ['rates', 'contact']
     },
