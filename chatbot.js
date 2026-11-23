@@ -17,7 +17,7 @@
   }
   var callLink = '<span class="chat-dual"><a href="tel:' + CALL.tel + '" class="dual-call" aria-label="Call ' + CALL.label + '"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></a>'
     + '<a href="' + waLink('Hi MMR SERVICES, I need some help.') + '" class="dual-wa" target="_blank" rel="noopener" aria-label="WhatsApp ' + CALL.label + '"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#25D366" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/><path fill="#fff" d="M8.6 7.2c-.2 0-.5.1-.7.3-.3.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.8 2.2.9 2.6.7 3.1.6.5 0 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3l-1.6-.8c-.2-.1-.4-.1-.6.1l-.7.9c-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2-1.3-.8-.7-1.3-1.5-1.4-1.8-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.2-.5.1-.2 0-.3 0-.5l-.8-1.8c-.2-.4-.4-.4-.5-.4z"/></svg></a>'
-    + '<a href="tel:' + CALL.tel + '" class="dual-num">' + CALL.label + '</a></span>';
+    + '</span>';
   var waAnchor = '<a href="' + waLink('Hi MMR SERVICES, I need some help.') + '" target="_blank" rel="noopener">' + WA.label + '</a>';
 
   // ------------------------------------------------------------ knowledge base
@@ -203,7 +203,7 @@
         '<button type="button" class="chat-close" aria-label="Close chat">' + ICON_CLOSE + '</button>' +
       '</header>' +
       '<div class="chat-body" aria-live="polite"></div>' +
-      '<div class="chat-handoff"><a href="' + waLink('Hi MMR SERVICES, I need some help.') + '" target="_blank" rel="noopener">' + ICON_WA + ' ' + CALL.label + '</a></div>' +
+      '<div class="chat-handoff"><span>Talk to our team</span>' + callLink + '</div>' +
       '<form class="chat-form" autocomplete="off">' +
         '<input type="text" name="q" placeholder="Type your question…" aria-label="Type your question" maxlength="300">' +
         '<button type="submit" aria-label="Send">' + ICON_SEND + '</button>' +
@@ -266,7 +266,8 @@
         box.appendChild(a);
       }
       if (topic.wa) {
-        var w = el('a', 'msg-btn msg-btn-wa', ICON_WA_WHITE + ' ' + CALL.label);
+        var w = el('a', 'msg-btn msg-btn-wa msg-btn-icon', ICON_WA_WHITE);
+        w.setAttribute('aria-label', 'WhatsApp');
         w.href = waLink(topic.wa); w.target = '_blank'; w.rel = 'noopener';
         box.appendChild(w);
       }
@@ -281,12 +282,14 @@
         addBot(topic.answer, next, actions(topic));
       } else {
         var box = el('div', 'msg-actions');
-        var w = el('a', 'msg-btn msg-btn-wa', ICON_WA_WHITE + ' ' + CALL.label);
+        var w = el('a', 'msg-btn msg-btn-wa msg-btn-icon', ICON_WA_WHITE);
+        w.setAttribute('aria-label', 'WhatsApp');
         w.href = waLink('Hi MMR SERVICES, ' + text); w.target = '_blank'; w.rel = 'noopener';
-        var c = el('a', 'msg-btn', '&#128222; ' + CALL.label);
+        var c = el('a', 'msg-btn msg-btn-icon', '&#128222;');
+        c.setAttribute('aria-label', 'Call');
         c.href = 'tel:' + CALL.tel;
         box.appendChild(w); box.appendChild(c);
-        addBot('Sorry, I don\'t have an answer for that yet. Our team can help you directly: send your question or reach us on ' + CALL.label + '.', MAIN_MENU, box);
+        addBot('Sorry, I don\'t have an answer for that yet. Our team can help you directly. Tap an icon below to reach us.', MAIN_MENU, box);
       }
     }
 

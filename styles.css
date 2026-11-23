@@ -756,3 +756,50 @@ ul { list-style: none; }
 /* real photos: white background behind product photos, fill the frame */
 .product img { background: var(--white); }
 .banner-img.photo, .hero-img.photo { aspect-ratio: 4 / 3; object-fit: cover; background: var(--white); }
+
+/* ---------- Real photos on the Spot Cash / Retailer ID / QR / POS cards ---------- */
+.offer.has-photo { padding: 0 0 18px; overflow: hidden; }
+.offer.has-photo h4, .offer.has-photo p { padding: 0 18px; }
+.offer.has-photo h4 { margin-top: 14px; }
+.offer-photo, .card-photo { aspect-ratio: 4 / 3; overflow: hidden; background: #eef3f9; }
+.offer-photo img, .card-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.offer.has-photo:hover .offer-photo img, .card.has-photo:hover .card-photo img { transform: scale(1.05); }
+.card.has-photo { padding: 0 0 22px; overflow: hidden; }
+.card.has-photo h4, .card.has-photo p { padding: 0 22px; }
+.card.has-photo h4 { margin-top: 16px; }
+@media (max-width: 520px) {
+  .offer.has-photo { padding-bottom: 14px; }
+  .offer.has-photo h4, .offer.has-photo p { padding: 0 12px; }
+  .offer.has-photo h4 { margin-top: 10px; }
+}
+
+/* card network logos (photo strip) */
+.networks-photo { background: var(--white); border: 1px solid var(--line); border-radius: 16px; padding: 10px; max-width: 900px; margin: 0 auto; }
+.networks-photo img { width: 100%; height: auto; border-radius: 10px; }
+
+/* ---------- Blue header (logo-light.png is made for blue backgrounds) ---------- */
+.site-header {
+  background: linear-gradient(110deg, #0a2547 0%, #0054a6 100%);
+  box-shadow: 0 4px 18px rgba(7, 26, 51, 0.35);
+}
+.topbar { background: #061631; }
+.nav a { color: #e3ecf7; }
+.nav a:hover { color: var(--white); background: rgba(255, 255, 255, 0.12); }
+.nav a.active { color: var(--white); background: var(--orange); }
+.menu-toggle { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.35); color: var(--white); }
+@media (max-width: 900px) {
+  .nav { background: #0a2547; box-shadow: 0 14px 24px rgba(0, 0, 0, 0.3); }
+  .nav a { color: #e3ecf7; }
+  .nav .nav-login { background: rgba(243, 111, 32, 0.15); color: #ffb37f; }
+}
+
+/* footer logo straight on the blue footer, no white box */
+.footer-logo { background: none; padding: 0; border-radius: 0; }
+.footer-logo img { height: 58px; }
+
+/* chatbot: icons only, no phone number */
+.chat-handoff { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 0.82rem; font-weight: 600; color: var(--blue-deep); }
+.chat-handoff .chat-dual { gap: 10px; }
+.chat-handoff .chat-dual svg, .msg .chat-dual svg { width: 22px; height: 22px; }
+.msg .msg-btn-icon { width: 40px; height: 40px; padding: 0; justify-content: center; font-size: 1.1rem; }
+.msg .msg-btn-icon svg { width: 22px; height: 22px; }
