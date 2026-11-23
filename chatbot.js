@@ -78,6 +78,14 @@
       next: ['rates', 'contact']
     },
     {
+      id: 'cms', label: 'CMS (Cash Management)',
+      keywords: ['cms', 'cash management', 'cash management services', 'collection', 'collections', 'receivable', 'receivables', 'payable', 'payables', 'vendor payment', 'salary', 'salaries', 'liquidity', 'cash flow', 'cash pickup', 'treasury', 'nach', 'mis', 'reconciliation'],
+      answer: '<b>CMS: Cash Management Services</b><br>Simplify how your business collects, pays and tracks money:<ul><li>Collections from customers and branches</li><li>Vendor, salary and bill payments</li><li>Better cash flow and liquidity planning</li><li>Clear MIS reports and reconciliation</li></ul>Suitable for growing businesses, distributors and multi-branch firms. Call or WhatsApp ' + callLink + ' to discuss your needs.',
+      link: ['cms.html', 'View CMS page'],
+      wa: 'Hi MMR SERVICES, I want to know about Cash Management Services (CMS).',
+      next: ['retailer', 'contact']
+    },
+    {
       id: 'eseva', label: 'E-Seva Services',
       keywords: ['e-seva', 'eseva', 'e seva', 'seva', 'fssai', 'food licence', 'food license', 'gst', 'pan', 'pan card', 'itr', 'income tax', 'tax return', 'passport', 'aadhaar pan link', 'pan link', 'npci', 'link aadhaar'],
       answer: '<b>E-Seva Services, now live</b><ul><li>FSSAI licence fee</li><li>GST registration &amp; GST return fees</li><li>PAN service</li><li>ITR form</li><li>Passport registration &amp; renewal fee</li><li>Aadhaar-PAN link &amp; Aadhaar-NPCI link fee</li></ul>One platform, multiple services.',
@@ -127,7 +135,7 @@
     {
       id: 'thanks', label: 'Thanks',
       keywords: ['thank', 'thanks', 'thank you', 'ok', 'okay', 'great', 'super', 'nice', 'bye'],
-      answer: 'You\'re welcome! &#128522; We will on time service. Is there anything else I can help with?',
+      answer: 'You\'re welcome! &#128522; Is there anything else I can help with?',
       next: []
     },
     {
@@ -138,7 +146,7 @@
     }
   ];
 
-  var MAIN_MENU = ['aeps', 'bbps', 'rates', 'eseva', 'a4', 'retailer', 'login', 'contact'];
+  var MAIN_MENU = ['aeps', 'bbps', 'rates', 'cms', 'eseva', 'a4', 'retailer', 'login', 'contact'];
   var byId = {};
   TOPICS.forEach(function (t) { byId[t.id] = t; });
 
@@ -188,7 +196,7 @@
     panel.hidden = true;
     panel.innerHTML =
       '<header class="chat-head">' +
-        '<img src="images/logo-mark.png" alt="" width="40" height="40">' +
+        '<span class="chat-logo"><img src="images/logo.png" alt="MMR SERVICES" width="1065" height="475"></span>' +
         '<div><strong>MMR Assistant</strong><span><i></i>Online &middot; replies instantly</span></div>' +
         '<button type="button" class="chat-close" aria-label="Close chat">' + ICON_CLOSE + '</button>' +
       '</header>' +
@@ -289,7 +297,7 @@
       ui.launcher.setAttribute('aria-label', 'Close chat assistant');
       if (!started) {
         started = true;
-        addBot('Hi! &#128075; Welcome to <b>MMR SERVICES</b>, <i>we will on time service</i>.<br>I can help with our services, rates, offices and contact details. What are you looking for?', MAIN_MENU);
+        addBot('Hi! &#128075; Welcome to <b>MMR SERVICES</b>.<br>I can help with our services, rates, offices and contact details. What are you looking for?', MAIN_MENU);
       }
       if (window.innerWidth > 720) setTimeout(function () { input.focus(); }, 50);
     }
