@@ -116,9 +116,9 @@
       next: ['login', 'rates', 'contact']
     },
     {
-      id: 'login', label: 'Retailer Login',
-      keywords: ['login', 'log in', 'sign in', 'signin', 'portal', 'soulpay', 'soul pay', 'mmrpe', 'mmr pe', 'password', 'account'],
-      answer: '<b>Retailer &amp; partner portals</b><br>&#8226; <a href="https://secures.soulpay.in/login" target="_blank" rel="noopener">SoulPay Login</a><br>&#8226; <a href="https://mmrpe.com/login" target="_blank" rel="noopener">MMRPe Login</a><br>Trouble logging in? WhatsApp ' + waAnchor + '.',
+      id: 'login', label: 'Login / Signup',
+      keywords: ['login', 'log in', 'sign in', 'signin', 'signup', 'sign up', 'sign-up', 'portal', 'soulpay', 'soul pay', 'mmrpe', 'mmr pe', 'password', 'account'],
+      answer: '<b>Retailer &amp; partner portals</b><br>&#8226; <a href="https://secures.soulpay.in/login" target="_blank" rel="noopener">SoulPay Login</a><br>&#8226; <a href="https://mmrpe.com/login" target="_blank" rel="noopener">MMRPe Login</a><br>Trouble logging in? ' + callLink,
       next: ['retailer', 'contact']
     },
     {
@@ -131,7 +131,7 @@
     {
       id: 'contact', label: 'Contact Us',
       keywords: ['contact', 'call', 'phone', 'number', 'mobile', 'whatsapp', 'whats app', 'email', 'mail', 'talk', 'human', 'person', 'agent', 'support', 'help', 'customer care', 'reach'],
-      answer: '<b>Contact MMR SERVICES</b><br>' + callLink + '<br>&#9742;&#65039; <a href="tel:' + LANDLINE_CHN.tel + '">' + LANDLINE_CHN.label + '</a> (Chennai), <a href="tel:' + LANDLINE_SKHT.tel + '">' + LANDLINE_SKHT.label + '</a> (Srikalahasti)<br>&#9993;&#65039; <a href="mailto:' + MAIL + '">' + MAIL + '</a> / <a href="mailto:' + MAIL2 + '">' + MAIL2 + '</a>',
+      answer: '<b>Contact MMR SERVICES</b><br>' + callLink + '<br>&#9742;&#65039; Chennai <a href="tel:' + LANDLINE_CHN.tel + '">' + LANDLINE_CHN.label + '</a><br>&#9742;&#65039; Srikalahasti <a href="tel:' + LANDLINE_SKHT.tel + '">' + LANDLINE_SKHT.label + '</a><br>&#9993;&#65039; <a href="mailto:' + MAIL2 + '">' + MAIL2 + '</a>',
       next: ['offices', 'retailer']
     },
     {
@@ -198,7 +198,7 @@
     panel.hidden = true;
     panel.innerHTML =
       '<header class="chat-head">' +
-        '<span class="chat-logo"><img src="images/logo.png" alt="MMR SERVICES" width="1065" height="475"></span>' +
+        '<span class="chat-logo"><img src="images/logo-gold-web.png" alt="MMR SERVICES" width="467" height="200"></span>' +
         '<div><strong>Customer Support</strong><span><i></i>Online &middot; replies instantly</span></div>' +
         '<button type="button" class="chat-close" aria-label="Close chat">' + ICON_CLOSE + '</button>' +
       '</header>' +
