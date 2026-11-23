@@ -749,3 +749,10 @@ ul { list-style: none; }
 @media (max-width: 720px) {
   .float-btns a svg { width: 26px; height: 26px; }
 }
+
+/* footer email icons */
+.footer-mail svg { color: var(--orange-2); }
+
+/* real photos: white background behind product photos, fill the frame */
+.product img { background: var(--white); }
+.banner-img.photo, .hero-img.photo { aspect-ratio: 4 / 3; object-fit: cover; background: var(--white); }
