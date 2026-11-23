@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Dancing+Script:wght@600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
 
 /* Brand colours taken from the MMR Services visiting card */
 :root {
@@ -713,4 +713,64 @@ ul { list-style: none; }
 .cta-num:hover { color: var(--orange-2); }
 @media (max-width: 520px) {
   .cta-contact { flex: 1 1 100%; justify-content: center; }
+}
+
+/* ---------- Header fades out on scroll down, back in on scroll up ---------- */
+.site-header { transition: opacity 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease; will-change: opacity, transform; }
+.site-header.header-hidden { opacity: 0; transform: translateY(-100%); pointer-events: none; box-shadow: none; }
+@media (prefers-reduced-motion: reduce) {
+  .site-header { transition: opacity 0.2s linear; }
+  .site-header.header-hidden { transform: none; }
+}
+
+/* ---------- Brand logo: emblem image + sharp text (readable tagline at every size) ---------- */
+.brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+.brand .brand-mark { height: 56px; width: 56px; flex-shrink: 0; }
+.brand-text { display: flex; flex-direction: column; line-height: 1; }
+.brand-name { font-family: 'Cinzel', Georgia, serif; font-weight: 800; font-size: 27px; color: #f36f20; letter-spacing: 1px; line-height: 0.95; }
+.brand-sub { font-family: 'Cinzel', Georgia, serif; font-weight: 700; font-size: 15px; color: #f36f20; letter-spacing: 2.4px; line-height: 1.15; }
+.brand-tag { font-family: 'Dancing Script', cursive; font-weight: 700; font-size: 16.5px; color: #0a2547; line-height: 1.1; white-space: nowrap; margin-top: 1px; }
+
+.footer-logo.brand { display: inline-flex; padding: 10px 18px 10px 12px; }
+.footer-logo .brand-mark { height: 54px; width: 54px; }
+
+.chat-logo.brand { gap: 6px; padding: 4px 10px 4px 5px; }
+.chat-logo .brand-mark { height: 34px; width: 34px; }
+.chat-logo .brand-name { font-size: 15px; }
+.chat-logo .brand-sub { font-size: 8.5px; letter-spacing: 1.4px; }
+.chat-logo .brand-tag { font-size: 10.5px; }
+
+.quote-brand.brand { justify-content: center; margin: 0 auto 10px; display: flex; }
+.quote-brand .brand-mark { height: 56px; width: 56px; }
+
+@media (max-width: 720px) {
+  .brand .brand-mark { height: 46px; width: 46px; }
+  .brand-name { font-size: 22px; }
+  .brand-sub { font-size: 12.5px; letter-spacing: 2px; }
+  .brand-tag { font-size: 14.5px; }
+  .chat-logo .brand-mark { height: 34px; width: 34px; }
+  .chat-logo .brand-name { font-size: 15px; }
+  .chat-logo .brand-sub { font-size: 8.5px; }
+  .chat-logo .brand-tag { font-size: 10.5px; }
+}
+@media (max-width: 360px) {
+  .brand .brand-mark { height: 40px; width: 40px; }
+  .brand { gap: 8px; }
+  .brand-name { font-size: 19px; }
+  .brand-sub { font-size: 11px; }
+  .brand-tag { font-size: 13px; }
+}
+
+/* keep logo colours inside the chat header (overrides the generic .chat-head span/div rules) */
+.chat-head .chat-logo .brand-text { flex: none; display: flex; flex-direction: column; gap: 0; line-height: 1; }
+.chat-head .chat-logo .brand-name { display: block; color: #f36f20; font-size: 15px; }
+.chat-head .chat-logo .brand-sub { display: block; color: #f36f20; font-size: 8.5px; letter-spacing: 1.4px; }
+.chat-head .chat-logo .brand-tag { display: block; color: #0a2547; font-size: 10.5px; }
+
+/* popup logo: emblem and text sit together, centred (overrides the old .quote-head img rule) */
+.quote-head .quote-brand { width: max-content; max-width: 100%; margin: 0 auto 10px; }
+.quote-head .quote-brand .brand-mark { margin: 0; height: 56px; width: 56px; }
+.quote-head .quote-brand .brand-text { text-align: left; }
+@media (max-width: 520px) {
+  .quote-head .quote-brand .brand-mark { height: 46px; width: 46px; }
 }

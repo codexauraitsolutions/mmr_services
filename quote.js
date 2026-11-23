@@ -43,7 +43,7 @@
       '<div class="quote-modal" role="dialog" aria-modal="true" aria-labelledby="quote-title">' +
         '<button type="button" class="quote-close" aria-label="Close">' + ICON_CLOSE + '</button>' +
         '<div class="quote-head">' +
-          '<img src="images/logo.png" alt="MMR SERVICES" width="1065" height="475">' +
+          '<div class="quote-brand brand"><img src="images/logo-mark.png" alt="" width="375" height="375" class="brand-mark"><span class="brand-text"><span class="brand-name">MMR</span><span class="brand-sub">SERVICES</span><span class="brand-tag">We will on time service</span></span></div>' +
           '<h2 id="quote-title">Get a Free Quote</h2>' +
           '<p>Tell us what you need and our team will get back to you quickly.</p>' +
         '</div>' +

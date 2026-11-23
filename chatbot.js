@@ -196,7 +196,7 @@
     panel.hidden = true;
     panel.innerHTML =
       '<header class="chat-head">' +
-        '<span class="chat-logo"><img src="images/logo.png" alt="MMR SERVICES" width="1065" height="475"></span>' +
+        '<span class="chat-logo brand"><img src="images/logo-mark.png" alt="" width="375" height="375" class="brand-mark"><span class="brand-text"><span class="brand-name">MMR</span><span class="brand-sub">SERVICES</span><span class="brand-tag">We will on time service</span></span></span>' +
         '<div><strong>MMR Customer Support</strong><span><i></i>Online &middot; replies instantly</span></div>' +
         '<button type="button" class="chat-close" aria-label="Close chat">' + ICON_CLOSE + '</button>' +
       '</header>' +
