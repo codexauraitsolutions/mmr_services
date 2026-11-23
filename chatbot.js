@@ -122,7 +122,7 @@
     {
       id: 'offices', label: 'Office Address',
       keywords: ['address', 'office', 'location', 'where', 'branch', 'visit', 'chennai', 'sithalapakkam', 'srikalahasti', 'kalahasti', 'andhra', 'tamil nadu', 'map', 'directions'],
-      answer: '<b>Chennai office</b><br>#3/740, Kanni Kovil Street, Sithalapakkam, Chennai - 600131.<br>Landline: <a href="tel:' + LANDLINE_CHN.tel + '">' + LANDLINE_CHN.label + '</a><br><br><b>Srikalahasti office</b><br>1-284/5, Pichatur Road, Revenue Ward 1 (Behind Sri Draupadi Sametha Dharmaraja Swamy Temple), Srikalahasti, A.P - 517644.<br>Landline: <a href="tel:' + LANDLINE_SKHT.tel + '">' + LANDLINE_SKHT.label + '</a>',
+      answer: '<b>Chennai office</b><br>#3/740, Kanni Kovil Street, Sithalapakkam, Chennai - 600131.<br>&#128205; <a href="https://maps.app.goo.gl/EPhTznhaiuHwMEHp7" target="_blank" rel="noopener">Open in Google Maps</a><br>Landline: <a href="tel:' + LANDLINE_CHN.tel + '">' + LANDLINE_CHN.label + '</a><br><br><b>Srikalahasti office</b><br>1-284/5, Pichatur Road, Revenue Ward 1 (Behind Sri Draupadi Sametha Dharmaraja Swamy Temple), Srikalahasti, A.P - 517644.<br>&#128205; <a href="https://maps.app.goo.gl/B24z3HJkmfDDjsa46" target="_blank" rel="noopener">Open in Google Maps</a><br>Landline: <a href="tel:' + LANDLINE_SKHT.tel + '">' + LANDLINE_SKHT.label + '</a>',
       link: ['index.html#contact', 'View offices'],
       next: ['contact']
     },
@@ -197,7 +197,7 @@
     panel.innerHTML =
       '<header class="chat-head">' +
         '<span class="chat-logo"><img src="images/logo.png" alt="MMR SERVICES" width="1065" height="475"></span>' +
-        '<div><strong>MMR Assistant</strong><span><i></i>Online &middot; replies instantly</span></div>' +
+        '<div><strong>MMR Customer Support</strong><span><i></i>Online &middot; replies instantly</span></div>' +
         '<button type="button" class="chat-close" aria-label="Close chat">' + ICON_CLOSE + '</button>' +
       '</header>' +
       '<div class="chat-body" aria-live="polite"></div>' +
@@ -329,7 +329,7 @@
     try { seen = sessionStorage.getItem('mmr-chat-nudge') === '1'; } catch (e) {}
     if (!seen) {
       setTimeout(function () {
-        if (ui.panel.hidden) ui.nudge.classList.add('show');
+        if (ui.panel.hidden && !document.body.classList.contains('quote-open')) ui.nudge.classList.add('show');
         try { sessionStorage.setItem('mmr-chat-nudge', '1'); } catch (e) {}
         setTimeout(function () { ui.nudge.classList.remove('show'); }, 8000);
       }, 4000);

@@ -494,7 +494,7 @@ ul { list-style: none; }
 .typing span:nth-child(2) { animation-delay: 0.15s; }
 .typing span:nth-child(3) { animation-delay: 0.3s; }
 @keyframes dot { 0%, 60%, 100% { opacity: 0.3; transform: none; } 30% { opacity: 1; transform: translateY(-3px); } }
-@keyframes msg-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes msg-in { from { transform: translateY(6px); } to { transform: none; } }
 
 .chat-chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .chat-chip {
@@ -575,8 +575,8 @@ ul { list-style: none; }
   .chat-nudge { right: 12px; bottom: 68px; }
 }
 @media (max-width: 520px) {
-  .topbar .portals { display: none; }
-  .topbar .container { justify-content: center; min-height: 36px; }
+  .topbar .portals a { display: none; }
+  .topbar .container { justify-content: space-between; min-height: 36px; flex-wrap: nowrap; }
   .offers .grid { grid-template-columns: 1fr 1fr; gap: 12px; }
   .offer { padding: 16px 14px; }
   .offer h4 { font-size: 0.92rem; }
@@ -594,4 +594,123 @@ ul { list-style: none; }
   .offers .grid { grid-template-columns: 1fr; }
   .site-footer .cols { grid-template-columns: 1fr; }
   .cta .btn { font-size: 0.85rem; padding: 12px 14px; white-space: nowrap; }
+}
+
+/* ---------- Get Quote button + popup ---------- */
+.nowrap { white-space: nowrap; }
+.quote-btn {
+  border: 0; cursor: pointer; background: var(--orange); color: var(--white);
+  font: 600 0.82rem 'Poppins', sans-serif; padding: 4px 14px; border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(243,111,32,0.35); transition: background 0.2s;
+}
+.quote-btn:hover { background: #ff8a3d; }
+
+.quote-overlay {
+  position: fixed; inset: 0; z-index: 100; background: rgba(7,18,40,0.6);
+  display: grid; place-items: center; padding: 16px; overflow-y: auto;
+  animation: quote-fade 0.25s ease;
+}
+.quote-overlay[hidden] { display: none; }
+.quote-open { overflow: hidden; }
+.quote-modal {
+  position: relative; width: min(480px, 100%); background: var(--white);
+  border-radius: 22px; box-shadow: 0 30px 80px rgba(0,0,0,0.35); overflow: hidden;
+  animation: quote-pop 0.3s ease;
+}
+.quote-head {
+  text-align: center; padding: 24px 24px 18px;
+  background: linear-gradient(135deg, #eaf2fb, #fff3ea); border-bottom: 1px solid var(--line);
+}
+.quote-head img { height: 58px; width: auto; margin: 0 auto 10px; }
+.quote-head h2 { color: var(--blue-deep); font-size: 1.45rem; line-height: 1.2; }
+.quote-head p { color: var(--muted); font-size: 0.88rem; margin-top: 4px; }
+.quote-close {
+  position: absolute; top: 12px; right: 12px; z-index: 1; width: 36px; height: 36px;
+  border: 0; border-radius: 10px; background: rgba(10,37,71,0.08); color: var(--blue-deep);
+  display: grid; place-items: center; cursor: pointer;
+}
+.quote-close svg { width: 18px; height: 18px; }
+.quote-form { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 14px; padding: 20px 24px 22px; }
+.quote-form label { display: flex; flex-direction: column; gap: 5px; font-size: 0.8rem; font-weight: 600; color: var(--blue-deep); }
+.quote-form .quote-full, .quote-error, .quote-submit, .quote-call { grid-column: 1 / -1; }
+.quote-form input, .quote-form select, .quote-form textarea {
+  width: 100%; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px;
+  font: 400 0.9rem 'Poppins', sans-serif; color: var(--ink); background: var(--bg); outline: none;
+}
+.quote-form textarea { resize: vertical; min-height: 70px; }
+.quote-form input:focus, .quote-form select:focus, .quote-form textarea:focus { border-color: var(--blue); background: var(--white); }
+.quote-error { color: #c62828; font-size: 0.84rem; font-weight: 500; }
+.quote-submit { width: 100%; border: 0; cursor: pointer; font-size: 1rem; margin-top: 4px; }
+.quote-call { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-size: 0.88rem; font-weight: 600; color: var(--blue); }
+.quote-call svg { width: 16px; height: 16px; }
+@keyframes quote-fade { from { background: rgba(7,18,40,0); } to { background: rgba(7,18,40,0.6); } }
+@keyframes quote-pop { from { transform: translateY(16px) scale(0.98); } to { transform: none; } }
+
+@media (max-width: 520px) {
+  .quote-overlay { place-items: end center; padding: 0; }
+  .quote-modal { border-radius: 22px 22px 0 0; max-height: 100%; overflow-y: auto; }
+  .quote-form { grid-template-columns: 1fr; padding: 16px 18px 20px; }
+  .quote-head { padding: 20px 18px 14px; }
+  .quote-head img { height: 48px; }
+  .quote-form input, .quote-form select, .quote-form textarea { font-size: 16px; }
+}
+@media (max-width: 360px) {
+  .topbar .info { gap: 10px; font-size: 0.78rem; }
+  .quote-btn { padding: 4px 10px; font-size: 0.76rem; }
+}
+
+/* Keep "1-284/5, Pichatur Road, Revenue Ward 1," on one line: shrink it slightly where space is tight */
+@media (min-width: 721px) and (max-width: 960px) {
+  .branch .nowrap { font-size: min(1em, calc(2.45vw - 5.6px)); }
+}
+@media (max-width: 720px) {
+  .branch .nowrap { font-size: min(1em, calc(4.9vw - 6px)); }
+  .site-footer .cols { grid-template-columns: 1fr; }
+  .site-footer .cols > div:nth-child(-n+2) { grid-column: auto; }
+  .site-footer .nowrap { font-size: min(1em, calc(4.9vw - 2px)); }
+}
+
+/* Top bar on phones: number, WhatsApp and Get Quote on one line (portal logins stay in the ☰ menu) */
+@media (max-width: 720px) {
+  .topbar .portals a { display: none; }
+  .topbar .container { justify-content: space-between; flex-wrap: nowrap; min-height: 36px; }
+}
+@media (max-width: 380px) {
+  .topbar .wa-link { font-size: 0; gap: 0; }   /* icon only */
+}
+
+/* No motion for visitors who ask for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .quote-overlay, .quote-modal, .msg { animation: none; }
+}
+
+/* ---------- Google Maps links ---------- */
+.branch .map-btn {
+  align-self: flex-start; margin-top: 4px; padding: 9px 18px; font-size: 0.88rem;
+  background: #eaf2fb; color: var(--blue); border: 1px solid #cfe0f3;
+}
+.branch .map-btn:hover { background: var(--blue); color: var(--white); }
+.branch .map-btn svg { width: 17px; height: 17px; }
+.footer-map { display: inline-flex; align-items: center; gap: 8px; margin-top: 6px; color: #9fb0c8; font-size: 0.86rem; }
+.footer-map svg { width: 17px; height: 17px; color: var(--orange-2); flex-shrink: 0; }
+.footer-map:hover { color: var(--orange-2); }
+
+/* Contact section: one pill with call + WhatsApp icons and the number */
+.cta-contact {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: var(--blue-deep); color: var(--white); border-radius: 999px; padding: 6px 22px 6px 6px;
+}
+.cta-ico {
+  width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center;
+  transition: transform 0.2s;
+}
+.cta-ico:hover { transform: scale(1.08); }
+.cta-call { background: var(--orange); color: var(--white); }
+.cta-call svg { width: 19px; height: 19px; }
+.cta-wa { background: var(--white); }
+.cta-wa svg { width: 28px; height: 28px; }
+.cta-num { font-weight: 700; font-size: 1.05rem; letter-spacing: 0.3px; margin-left: 8px; white-space: nowrap; }
+.cta-num:hover { color: var(--orange-2); }
+@media (max-width: 520px) {
+  .cta-contact { flex: 1 1 100%; justify-content: center; }
 }
